@@ -3,13 +3,18 @@ import LoginLink from "./LoginLink";
 import Menu from "./Menu";
 import AddComponents from "./AddComponents";
 
-const NavBar = () => {
+
+
+
+const NavBar = ({visibilityAddCarrier}) => {
   const [visibilityBar, setVisibilityBar] = useState(false);
+  
 
   const visibilityBarHandler = () => {
     setVisibilityBar(!visibilityBar);
   };
 
+ 
   return (
     <>
       {visibilityBar ? (
@@ -22,7 +27,7 @@ const NavBar = () => {
               </div>
               <div className="absolute top-20	left-8	">
                 <AddComponents>Add New Equipment</AddComponents>
-                <AddComponents>Add new Carrier</AddComponents>
+                <AddComponents visibilityAddCarrier={visibilityAddCarrier}>Add new Carrier</AddComponents>
                 <AddComponents>Add New TF OEE</AddComponents>
                 <AddComponents>Add New TF CC</AddComponents>
               </div>
